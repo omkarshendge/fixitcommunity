@@ -1,69 +1,88 @@
-# Welcome to your Lovable project
 
-## Project info
+# CivicConnect - Community Infrastructure Reporting Platform
 
-**URL**: https://lovable.dev/projects/328f2f34-b9b7-4a28-9077-8dfeeee5a194
+CivicConnect is a web application that enables citizens to report infrastructure issues in their communities and track government responses. By connecting communities with local authorities, we aim to improve infrastructure maintenance and responsiveness.
 
-## How can I edit this code?
+![CivicConnect Interface](public/placeholder.svg)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Report Infrastructure Issues**: Submit detailed reports with images, locations, and descriptions
+- **Track Issue Status**: Monitor the progress of reported issues from pending to resolved
+- **Community Dashboard**: View statistics and recent reports in your community
+- **User Authentication**: Secure login and registration system
+- **Upvote System**: Support important issues to increase their visibility
+- **Comments**: Discuss issues with other community members and government representatives
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/328f2f34-b9b7-4a28-9077-8dfeeee5a194) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+This project is built with:
 
-**Use your preferred IDE**
+- **React**: Front-end UI library
+- **React Router**: For navigation between pages
+- **Tailwind CSS**: For responsive styling
+- **shadcn/ui**: Component library for consistent UI design
+- **Lucide React**: For beautiful icons
+- **React Hook Form**: For form validation and submission
+- **React Query**: For data fetching and state management
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js (v14 or higher)
+- npm or yarn package manager
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/civic-connect.git
+   cd civic-connect
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:8080
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+├── pages/              # Page components
+├── types/              # Type definitions
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── App.jsx             # Main application component
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## What technologies are used for this project?
+## Acknowledgments
 
-This project is built with .
+- Thanks to all contributors who have helped shape this project
+- Special thanks to the shadcn/ui team for their excellent component library
+- The Lovable AI platform for assisting with development
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/328f2f34-b9b7-4a28-9077-8dfeeee5a194) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
