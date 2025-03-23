@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MapPin, Search, Filter, TrendingUp, MessageSquare, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Header from '@/components/Header';
 import ReportCard from '@/components/ReportCard';
-import { REPORT_STATUS } from '@/models/report';
+import { REPORT_STATUS } from '@/types/report';
 
 const Community = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,7 +22,7 @@ const Community = () => {
       location: 'Downtown',
       imageUrl: 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '2 days ago',
-      status: REPORT_STATUS.IN_PROGRESS,
+      status: 'in-progress',
       upvotes: 15,
       comments: 4,
       username: 'john_doe'
@@ -35,7 +34,7 @@ const Community = () => {
       location: 'North District',
       imageUrl: 'https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '4 days ago',
-      status: REPORT_STATUS.PENDING,
+      status: 'pending',
       upvotes: 8,
       comments: 2,
       username: 'jane_smith'
@@ -47,7 +46,7 @@ const Community = () => {
       location: 'Downtown',
       imageUrl: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '1 week ago',
-      status: REPORT_STATUS.RESOLVED,
+      status: 'resolved',
       upvotes: 23,
       comments: 7,
       username: 'mark_johnson'
@@ -59,7 +58,7 @@ const Community = () => {
       location: 'Central District',
       imageUrl: 'https://images.unsplash.com/photo-1605600659853-4246158333a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '5 days ago',
-      status: REPORT_STATUS.REJECTED,
+      status: 'rejected',
       upvotes: 5,
       comments: 1,
       username: 'sarah_wilson'
@@ -71,7 +70,7 @@ const Community = () => {
       location: 'West District',
       imageUrl: 'https://images.unsplash.com/photo-1519591222381-d3bffc4ae855?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '3 days ago',
-      status: REPORT_STATUS.IN_PROGRESS,
+      status: 'in-progress',
       upvotes: 12,
       comments: 3,
       username: 'robert_brown'
@@ -83,7 +82,7 @@ const Community = () => {
       location: 'South District',
       imageUrl: 'https://images.unsplash.com/photo-1583475020831-fb4fdf366ce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '6 hours ago',
-      status: REPORT_STATUS.PENDING,
+      status: 'pending',
       upvotes: 31,
       comments: 9,
       username: 'emily_davis'

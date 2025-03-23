@@ -4,7 +4,7 @@ import { MapPin, Clock, User, ChevronDown, ChevronUp, MessageSquare } from 'luci
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { REPORT_STATUS } from '@/models/report';
+import { REPORT_STATUS } from '@/types/report';
 
 const ReportCard = ({
   id,
@@ -24,17 +24,17 @@ const ReportCard = ({
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const statusColors = {
-    [REPORT_STATUS.PENDING]: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-    [REPORT_STATUS.IN_PROGRESS]: 'bg-blue-100 text-blue-800 border-blue-200',
-    [REPORT_STATUS.RESOLVED]: 'bg-green-100 text-green-800 border-green-200',
-    [REPORT_STATUS.REJECTED]: 'bg-red-100 text-red-800 border-red-200'
+    'pending': 'bg-yellow-100 text-yellow-800 border-yellow-200',
+    'in-progress': 'bg-blue-100 text-blue-800 border-blue-200',
+    'resolved': 'bg-green-100 text-green-800 border-green-200',
+    'rejected': 'bg-red-100 text-red-800 border-red-200'
   };
 
   const statusLabel = {
-    [REPORT_STATUS.PENDING]: 'Pending Review',
-    [REPORT_STATUS.IN_PROGRESS]: 'In Progress',
-    [REPORT_STATUS.RESOLVED]: 'Resolved',
-    [REPORT_STATUS.REJECTED]: 'Rejected'
+    'pending': 'Pending Review',
+    'in-progress': 'In Progress',
+    'resolved': 'Resolved',
+    'rejected': 'Rejected'
   };
 
   const toggleExpanded = () => setExpanded(!expanded);

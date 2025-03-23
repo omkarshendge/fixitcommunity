@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -14,7 +13,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import StatisticCard from '@/components/StatisticCard';
 import ReportCard from '@/components/ReportCard';
-import { REPORT_STATUS } from '@/models/report';
+import { REPORT_STATUS } from '@/types/report';
 
 const Index = () => {
   // Sample data - in a real app, this would come from your API
@@ -33,7 +32,7 @@ const Index = () => {
       location: '123 Main Street',
       imageUrl: 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '2 days ago',
-      status: REPORT_STATUS.IN_PROGRESS,
+      status: 'in-progress',
       upvotes: 15,
       comments: 4,
       username: 'john_doe'
@@ -45,7 +44,7 @@ const Index = () => {
       location: 'Corner of Pine St & 3rd Ave',
       imageUrl: 'https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '4 days ago',
-      status: REPORT_STATUS.PENDING,
+      status: 'pending',
       upvotes: 8,
       comments: 2,
       username: 'jane_smith'

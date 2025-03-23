@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Filter, Search, CheckCircle2, Clock, AlertTriangle, XCircle } from 'lucide-react';
@@ -8,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import Header from '@/components/Header';
 import ReportCard from '@/components/ReportCard';
-import { REPORT_STATUS } from '@/models/report';
+import { REPORT_STATUS } from '@/types/report';
 
 const MyReports = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -22,7 +21,7 @@ const MyReports = () => {
       location: '123 Main Street',
       imageUrl: 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '2 days ago',
-      status: REPORT_STATUS.IN_PROGRESS,
+      status: 'in-progress',
       upvotes: 15,
       comments: 4,
       username: 'john_doe'
@@ -34,7 +33,7 @@ const MyReports = () => {
       location: 'Corner of Pine St & 3rd Ave',
       imageUrl: 'https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '4 days ago',
-      status: REPORT_STATUS.PENDING,
+      status: 'pending',
       upvotes: 8,
       comments: 2,
       username: 'jane_smith'
@@ -46,7 +45,7 @@ const MyReports = () => {
       location: 'Market St between 5th & 6th Ave',
       imageUrl: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '1 week ago',
-      status: REPORT_STATUS.RESOLVED,
+      status: 'resolved',
       upvotes: 23,
       comments: 7,
       username: 'john_doe'
@@ -58,7 +57,7 @@ const MyReports = () => {
       location: 'Central Park Main Entrance',
       imageUrl: 'https://images.unsplash.com/photo-1605600659853-4246158333a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '5 days ago',
-      status: REPORT_STATUS.REJECTED,
+      status: 'rejected',
       upvotes: 5,
       comments: 1,
       username: 'john_doe'
@@ -136,28 +135,28 @@ const MyReports = () => {
               <AlertTriangle size={14} />
               <span className="hidden sm:inline">Pending</span>
               <Badge variant="secondary" className="ml-1">
-                {myReports.filter(r => r.status === REPORT_STATUS.PENDING).length}
+                {myReports.filter(r => r.status === 'pending').length}
               </Badge>
             </TabsTrigger>
             <TabsTrigger value="in-progress" className="flex gap-2">
               <Clock size={14} />
               <span className="hidden sm:inline">In Progress</span>
               <Badge variant="secondary" className="ml-1">
-                {myReports.filter(r => r.status === REPORT_STATUS.IN_PROGRESS).length}
+                {myReports.filter(r => r.status === 'in-progress').length}
               </Badge>
             </TabsTrigger>
             <TabsTrigger value="resolved" className="flex gap-2">
               <CheckCircle2 size={14} />
               <span className="hidden sm:inline">Resolved</span>
               <Badge variant="secondary" className="ml-1">
-                {myReports.filter(r => r.status === REPORT_STATUS.RESOLVED).length}
+                {myReports.filter(r => r.status === 'resolved').length}
               </Badge>
             </TabsTrigger>
             <TabsTrigger value="rejected" className="flex gap-2">
               <XCircle size={14} />
               <span className="hidden sm:inline">Rejected</span>
               <Badge variant="secondary" className="ml-1">
-                {myReports.filter(r => r.status === REPORT_STATUS.REJECTED).length}
+                {myReports.filter(r => r.status === 'rejected').length}
               </Badge>
             </TabsTrigger>
           </TabsList>
@@ -172,7 +171,7 @@ const MyReports = () => {
           
           <TabsContent value="pending" className="mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredReports(REPORT_STATUS.PENDING).map((report) => (
+              {filteredReports('pending').map((report) => (
                 <ReportCard key={report.id} {...report} />
               ))}
             </div>
@@ -180,7 +179,7 @@ const MyReports = () => {
           
           <TabsContent value="in-progress" className="mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredReports(REPORT_STATUS.IN_PROGRESS).map((report) => (
+              {filteredReports('in-progress').map((report) => (
                 <ReportCard key={report.id} {...report} />
               ))}
             </div>
@@ -188,7 +187,7 @@ const MyReports = () => {
           
           <TabsContent value="resolved" className="mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredReports(REPORT_STATUS.RESOLVED).map((report) => (
+              {filteredReports('resolved').map((report) => (
                 <ReportCard key={report.id} {...report} />
               ))}
             </div>
@@ -196,7 +195,7 @@ const MyReports = () => {
           
           <TabsContent value="rejected" className="mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredReports(REPORT_STATUS.REJECTED).map((report) => (
+              {filteredReports('rejected').map((report) => (
                 <ReportCard key={report.id} {...report} />
               ))}
             </div>
