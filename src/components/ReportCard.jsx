@@ -4,7 +4,7 @@ import { MapPin, Clock, User, ChevronDown, ChevronUp, MessageSquare } from 'luci
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { REPORT_STATUS } from '@/types/report';
+import { ReportStatus } from '@/types/report';
 
 const ReportCard = ({
   id,
