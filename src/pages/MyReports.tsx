@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import Header from '@/components/Header';
 import ReportCard from '@/components/ReportCard';
+import { ReportStatus } from '@/types/report';
 
 const MyReports = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,7 +22,7 @@ const MyReports = () => {
       location: '123 Main Street',
       imageUrl: 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '2 days ago',
-      status: 'in-progress',
+      status: 'in-progress' as ReportStatus,
       upvotes: 15,
       comments: 4,
       username: 'john_doe'
@@ -33,7 +34,7 @@ const MyReports = () => {
       location: 'Corner of Pine St & 3rd Ave',
       imageUrl: 'https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '4 days ago',
-      status: 'pending',
+      status: 'pending' as ReportStatus,
       upvotes: 8,
       comments: 2,
       username: 'jane_smith'
@@ -45,7 +46,7 @@ const MyReports = () => {
       location: 'Market St between 5th & 6th Ave',
       imageUrl: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '1 week ago',
-      status: 'resolved',
+      status: 'resolved' as ReportStatus,
       upvotes: 23,
       comments: 7,
       username: 'john_doe'
@@ -57,7 +58,7 @@ const MyReports = () => {
       location: 'Central Park Main Entrance',
       imageUrl: 'https://images.unsplash.com/photo-1605600659853-4246158333a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       createdAt: '5 days ago',
-      status: 'rejected',
+      status: 'rejected' as ReportStatus,
       upvotes: 5,
       comments: 1,
       username: 'john_doe'

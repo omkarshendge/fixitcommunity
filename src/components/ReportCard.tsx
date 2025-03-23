@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import { MapPin, Clock, User, ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-
-type ReportStatus = 'pending' | 'in-progress' | 'resolved' | 'rejected';
+import { ReportStatus } from '@/types/report';
 
 interface ReportCardProps {
   id: string;
